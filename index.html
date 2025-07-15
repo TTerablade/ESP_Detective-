@@ -95,7 +95,7 @@
         }
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 40px;
             padding: 0 80px 80px;
             justify-items: center;
@@ -142,45 +142,6 @@
             color: #bbb;
             font-size: 0.6em;
         }
-        .merch-section {
-            background: #111;
-            padding: 60px 40px;
-            text-align: center;
-        }
-        .merch-section h2 {
-            font-size: 1em;
-            text-shadow: 0 0 10px #fff;
-            margin-bottom: 40px;
-        }
-        .merch-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            justify-items: center;
-        }
-        .merch-item {
-            background: linear-gradient(145deg, #222, #000);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(255,255,255,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #444;
-        }
-        .merch-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 0 25px #fff;
-            border-color: #fff;
-        }
-        .merch-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        .merch-item p {
-            font-size: 0.65em;
-            padding: 12px;
-            color: #ddd;
-        }
         footer {
             text-align: center;
             padding: 20px;
@@ -188,6 +149,11 @@
             color: #aaa;
             font-size: 0.6em;
             border-top: 1px solid #333;
+        }
+        @media (max-width: 1024px) {
+            .features {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
         }
     </style>
 </head>
@@ -215,24 +181,41 @@
 
 <div class="section-title">Key Features</div>
 <section id="features" class="features">
-    <!-- Feature cards remain unchanged -->
-</section>
-
-<section id="merch" class="merch-section">
-    <h2>Official Merch</h2>
-    <div class="merch-grid">
-        <div class="merch-item">
-            <img src="/images/shirt.jpg" alt="ESP Detective Shirt">
-            <p>Retro Tee - Classic logo on high quality black cotton. $25</p>
-        </div>
-        <div class="merch-item">
-            <img src="/images/hat.jpg" alt="ESP Detective Hat">
-            <p>Black Snapback - Embroidered pixel style. $20</p>
-        </div>
-        <div class="merch-item">
-            <img src="/images/sticker.jpg" alt="ESP Detective Stickers">
-            <p>Sticker Pack - Holographic ESP Detective logos and icons. $8</p>
-        </div>
+    <div class="feature">
+        <h3>WiFi Analysis</h3>
+        <p>Advanced scanning of access points and stations with OUI matching and real-time monitoring.</p>
+    </div>
+    <div class="feature">
+        <h3>Packet Capture</h3>
+        <p>Capture probe requests, beacons, deauth packets, WPS, EAPOL and raw WiFi packets with PCAP support.</p>
+    </div>
+    <div class="feature">
+        <h3>Beacon Operations</h3>
+        <p>Generate custom beacon frames with random, rickroll, or AP list modes for network testing.</p>
+    </div>
+    <div class="feature">
+        <h3>BLE Toolkit</h3>
+        <p>Scan for Flipper devices, detect BLE spam, track AirTags, and capture raw BLE packets.</p>
+    </div>
+    <div class="feature">
+        <h3>Wardriving</h3>
+        <p>GPS-enabled WiFi and BLE wardriving with CSV logging for network mapping.</p>
+    </div>
+    <div class="feature">
+        <h3>Evil Portal</h3>
+        <p>Create customizable captive portals with online/offline modes and domain spoofing.</p>
+    </div>
+    <div class="feature">
+        <h3>Network Tools</h3>
+        <p>DIAL/Chromecast control, network printer access, and TP-Link device management.</p>
+    </div>
+    <div class="feature">
+        <h3>Security Testing</h3>
+        <p>WPS scanning, skimmer detection capabilities and more.</p>
+    </div>
+    <div class="feature">
+        <h3>Display Features</h3>
+        <p>Built-in games, music visualizer, and RGB rave mode for supported display boards.</p>
     </div>
 </section>
 
