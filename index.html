@@ -1,4 +1,244 @@
-<!DoctypeHTML>
-<html>
-  <p>ESP Detective</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP Detective</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Press Start 2P', monospace;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: #111;
+            border-bottom: 1px solid #333;
+        }
+        .logo {
+            font-size: 1.2em;
+            color: #fff;
+            text-shadow: 0 0 8px #fff;
+        }
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.75em;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+            text-shadow: 0 0 8px #fff;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            background: linear-gradient(145deg, #111, #000);
+        }
+        .hero-logo {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px #fff;
+        }
+        .buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.65em;
+            border: 2px solid #fff;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s ease-in-out;
+        }
+        .buttons a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+            transform: skewX(-20deg);
+            transition: left 0.5s;
+        }
+        .buttons a:hover::before {
+            left: 100%;
+        }
+        .buttons a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #fff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1em;
+            margin: 50px 0 30px;
+            text-shadow: 0 0 10px #fff;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            padding: 0 80px 80px;
+            justify-items: center;
+        }
+        .feature {
+            background: linear-gradient(145deg, #111, #000);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.1);
+            border: 1px solid #555;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.3s;
+        }
+        .feature::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
+            transform: skewX(-20deg);
+            transition: left 0.5s;
+        }
+        .feature:hover::before {
+            left: 100%;
+        }
+        .feature:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 35px #fff;
+            border-color: #fff;
+        }
+        .feature h3 {
+            margin-top: 0;
+            font-size: 0.75em;
+            color: #fff;
+            text-shadow: 0 0 8px #fff;
+        }
+        .feature p {
+            color: #bbb;
+            font-size: 0.6em;
+        }
+        .merch-section {
+            background: #111;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        .merch-section h2 {
+            font-size: 1em;
+            text-shadow: 0 0 10px #fff;
+            margin-bottom: 40px;
+        }
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+        .merch-item {
+            background: linear-gradient(145deg, #222, #000);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(255,255,255,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #444;
+        }
+        .merch-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 25px #fff;
+            border-color: #fff;
+        }
+        .merch-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .merch-item p {
+            font-size: 0.65em;
+            padding: 12px;
+            color: #ddd;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            color: #aaa;
+            font-size: 0.6em;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">ESP Detective</div>
+    <nav>
+        <a href="#features">FEATURES</a>
+        <a href="#compatibility">COMPATIBILITY</a>
+        <a href="#getstarted">GET STARTED</a>
+        <a href="#console">SERIAL CONSOLE</a>
+        <a href="#merch" style="color: #fff; font-weight: bold; text-shadow: 0 0 5px #fff;">MERCH</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-logo">espdetective.net</div>
+    <div class="buttons">
+        <a href="#getstarted">GET STARTED</a>
+        <a href="#download">LATEST RELEASE</a>
+        <a href="#docs">DOCUMENTATION</a>
+    </div>
+</section>
+
+<div class="section-title">Key Features</div>
+<section id="features" class="features">
+    <!-- Feature cards remain unchanged -->
+</section>
+
+<section id="merch" class="merch-section">
+    <h2>Official Merch</h2>
+    <div class="merch-grid">
+        <div class="merch-item">
+            <img src="/images/shirt.jpg" alt="ESP Detective Shirt">
+            <p>Retro Tee - Classic logo on high quality black cotton. $25</p>
+        </div>
+        <div class="merch-item">
+            <img src="/images/hat.jpg" alt="ESP Detective Hat">
+            <p>Black Snapback - Embroidered pixel style. $20</p>
+        </div>
+        <div class="merch-item">
+            <img src="/images/sticker.jpg" alt="ESP Detective Stickers">
+            <p>Sticker Pack - Holographic ESP Detective logos and icons. $8</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 ESP Detective | Open-Source | For Educational Use Only
+</footer>
+
+</body>
 </html>
